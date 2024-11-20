@@ -19,7 +19,6 @@ def main():
 
     print(" ".join(current))
 
-    print(word)
 
     while True:
         guess = input("Guess word Or Letter: ")
@@ -43,7 +42,13 @@ def main():
                     if x == guess:
                         current[num] = guess
                     num +=1
-
+            elif guess not in word:
+                usedletters.add(guess)
+                lives -= 1
+                print(f"Incorrect you have {lives} left")
+        if lives <= 0:
+            print(f"The word was {word}")
+            break
 
         print(" ".join(current))
         if "".join(current) == word:
