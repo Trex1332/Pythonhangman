@@ -9,8 +9,8 @@ hard = "hard.txt"
 
 #get user input
 def main():
-    word = randomword(hard)
-    print(word)
+    word = randomword(easy)
+    current = getblankword(word)
 
 
 
@@ -26,7 +26,11 @@ def randomword(dificulty):
     
 
 
-
+def getblankword(word):
+    blank = []
+    for x in word:
+        blank.append("_")
+    return blank
 
 
 
