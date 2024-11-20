@@ -9,7 +9,20 @@ hard = "hard.txt"
 
 #get user input
 def main():
-    word = randomword(easy).lower()
+    while True:
+        start = input("would you like to Player easy, med or hard difficulty?: ").lower()
+        if start == "easy":
+            word = randomword(easy).lower()
+            break
+        elif start == "med":
+            word = randomword(med).lower()
+            break
+        elif start == "hard":
+             word = randomword(hard).lower()
+             break
+        else:
+            pass
+
 
     current = getblankword(word)
 
